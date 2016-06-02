@@ -112,7 +112,7 @@ def main():
 				sys.exit()
 
 		else:
-			print 'The pull request is still unmergeable. :('
+			print 'The pull request was not found. :('
 			sys.exit()
 
 			
@@ -182,11 +182,11 @@ def get_pull_request(base_branch, head_branch):
 	url = BASE_URL + 'pulls'
 	headers = {'Authorization': 'token ' + AUTH_TOKEN}
 	payload = {
-				'state': 'open ',
+				'state': 'open',
 				'head': head_branch,
 				'base': base_branch
 			}
-	response = requests.get(url, headers=headers, data=json.dumps(payload))
+	response = requests.get(url, headers=headers, params=payload)
 	print_response_if_needed(url, response)
 	response_json = response.json()
 
@@ -194,8 +194,10 @@ def get_pull_request(base_branch, head_branch):
 		if len(response_json) == 1:
 			return {'result' : PULL_REQUEST_FOUND, 'number' : response_json[0]['number']}
 		else:
+			print 'Response code is OK but the length of the array is not 1.'
 			return {'result' : ERROR, 'message' : 'Response code is OK but the length of the array is not 1.'}
 	else:
+		print 'Response code is not OK: ' + str(response.status_code)
 		return {'result' : ERROR, 'message' : 'Response code: ' + str(response.status_code) + '. Body: ' + str(response_json)}
 
 
