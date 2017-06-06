@@ -57,6 +57,8 @@ def main():
 
 	if len(sys.argv) > 5:
 		assignee_login = sys.argv[5]
+	else:
+		assignee_login = ''
 
 	creation_result = create_pull_request(base_branch, head_branch)
 
