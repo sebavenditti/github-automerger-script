@@ -152,8 +152,6 @@ def usage():
 	print 'Recommended reading: https://help.github.com/articles/using-pull-requests/'
 	print ''
 	print '--------------------------------------------------------------------------'
-	sys.exit()
-
 
 def create_pull_request(base_branch, head_branch):
 
