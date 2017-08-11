@@ -25,7 +25,7 @@ python github-automerger.py <auth_token> <repo> <base-branch> <head-branch> [<as
 To get all the changes from *master* merged to *a feature branch*, you can schedule a Jenkins job that runs every 15 minutes and executes the following shell command:
 
 ```
-python github-automerger.py fe6a3gf1bfdef1egc083ad1b8g24635a6a1c4442 repo-owner/repo-name your-feature-branch master your-username
+python github-automerger.py fe6a3gf1bfdef1egc083ad1b8g24635a6a1c4442 repo-owner/repo-name your-feature-branch repo-owner:master your-username
 ```
 
 ## Recommended reading:
