@@ -115,7 +115,7 @@ def main():
 
 		else:
 			print 'The pull request was not found. :('
-			sys.exit()
+			sys.exit(1)
 
 			
 
