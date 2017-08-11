@@ -17,7 +17,7 @@ python github-automerger.py <auth_token> <repo> <base-branch> <head-branch> [<as
 
 ↳  head-branch: the branch that contains what you would like to be applied. Format: **repo-owner:head-branch-name**
 
-↳  assignee-login: optional parameter that can be used to specify the login (username) of the user to which the pull request should be assigned in case of a conflict while attempting to merge. If not provided, the pull request will be unassigned.'
+↳  assignee-login: optional parameter that can be used to specify the login (username) of the user to which the pull request should be assigned in case of a conflict while attempting to merge. If not provided, the pull request will be unassigned.
 
 
 ## Example: 
